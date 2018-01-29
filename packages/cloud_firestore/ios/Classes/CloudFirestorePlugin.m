@@ -226,8 +226,8 @@ NSDictionary *parseQuerySnapshot(FIRQuerySnapshot *snapshot) {
                                  message:[exception name]
                                  details:[exception reason]]);
     }
-    [query getDocumentsWithCompletion:^(FIRQuerySnapshot * _Nullable snapshot,
-                                        NSError * _Nullable error) {
+    [query getDocumentsWithCompletion:^(FIRQuerySnapshot *_Nullable snapshot,
+                                        NSError *_Nullable error) {
       if (error) result(error.flutterError);
       result(parseQuerySnapshot(snapshot));
     }];
