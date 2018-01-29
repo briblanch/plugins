@@ -231,7 +231,6 @@ NSDictionary *parseQuerySnapshot(FIRQuerySnapshot *snapshot) {
       if (error) result(error.flutterError);
       result(parseQuerySnapshot(snapshot));
     }];
-    
   } else if ([@"Query#removeListener" isEqualToString:call.method]) {
     NSNumber *handle = call.arguments[@"handle"];
     [[_listeners objectForKey:handle] remove];
